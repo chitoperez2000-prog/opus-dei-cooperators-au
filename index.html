@@ -19,10 +19,8 @@
 
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 75vh; }
         
-        /* Tab Visibility */
         .content-section { display: none; } 
         .active-section { display: block !important; animation: fadeIn 0.5s; }
-
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .hero-flex { display: flex; align-items: center; gap: 40px; margin-bottom: 20px; text-align: left; }
@@ -42,11 +40,7 @@
         .youtube-btn { display: inline-block; margin: 20px 0; padding: 12px 25px; background-color: #cd201f; color: white !important; text-decoration: none; font-family: sans-serif; font-weight: bold; border-radius: 5px; }
         footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
         
-        @media (max-width: 768px) {
-            .hero-flex { flex-direction: column; text-align: center; }
-            .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; }
-            h1 { font-size: 1.8rem; }
-        }
+        @media (max-width: 768px) { .hero-flex { flex-direction: column; text-align: center; } .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; } }
     </style>
 </head>
 <body>
@@ -55,10 +49,10 @@
         <a onclick="showSection('home')">Home</a>
         <a onclick="showSection('news')">News</a>
         <a onclick="showSection('talks')">Talks</a>
+        <a onclick="showSection('circles')">Circles</a>
         <a onclick="showSection('recollections')">Recollections</a>
         <a onclick="showSection('retreats')">Retreats</a>
         <a onclick="showSection('projects')">Projects</a>
-        <a onclick="showSection('circles')">Circles</a>
         <a onclick="showSection('events')">Events</a>
     </nav>
 
@@ -83,83 +77,72 @@
                     <h3>The Work of Formation</h3>
                     <div class="quote-box">
                         <p>Saint Josemaría often said that the entire work of Opus Dei is summed up in providing formation. A formation that “does not concern only one part of the person, but the entire being: it has to reach equally the intellect, heart and will.”</p>
+                        <p>And therefore, it is a human, professional, spiritual and apostolic formation, which aims at making the light and salt of Christ present in the ordinary activities of our life.</p>
                     </div>
-                    <a href="https://www.youtube.com/watch?v=FYXg1Q1oCy4" target="_blank" class="youtube-btn">▶ Watch "Working Together" Video</a>
+                    <a href="https://www.youtube.com/watch?v=FYXg1Q1oCy4" target="_blank" class="youtube-btn">▶ Watch Video</a>
                 </div>
             </div>
         </div>
 
         <div id="news" class="content-section">
             <h3>News & Updates</h3>
-            <p>Welcome to our online platform. This section will feature recent highlights, photos, and news from our Cooperator communities across Australia.</p>
-            <div class="contact-box">
-                <strong>New Website Launch</strong><br>
-                We are excited to provide this central hub for schedules and information. Check back regularly for new updates.
-            </div>
+            <div class="contact-box"><strong>New Website Launch</strong><br>Check back here for the latest highlights and news from our community.</div>
         </div>
 
         <div id="talks" class="content-section">
             <h3>Talks</h3>
             <p>Talks are available for all desiring to learn more about the Catholic faith. They run for approximately 30 minutes once a month, followed by a get together where participators get to meet and know each other.</p>
             <table>
-                <thead><tr><th>Suburb</th><th>Date and Frequency</th><th>Time</th></tr></thead>
+                <thead><tr><th>Suburb</th><th>Frequency</th><th>Time</th></tr></thead>
                 <tbody>
-                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday of the month</td><td>8:00pm – 9:00 pm</td></tr>
-                    <tr><td>Pennant Hills</td><td>Every 1st Monday of the month</td><td>7:30pm – 8:30 pm</td></tr>
+                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday</td><td>8:00pm – 9:00 pm</td></tr>
+                    <tr><td>Pennant Hills</td><td>Every 1st Monday</td><td>7:30pm – 8:30 pm</td></tr>
                 </tbody>
             </table>
-        </div>
-
-        <div id="recollections" class="content-section">
-            <h3>Recollections</h3>
-            <p>Recollections are a chance to step back from the whirlwind of daily tasks for around 2 hours of quiet prayer spent looking at God, the world, and ourselves. It includes a spiritual reading, a meditation given by a priest, examination of conscience, a talk, and benediction. The most important thing is to put yourself in front of our Lord, to look at Him and to let Him look at you.</p>
-            <div class="contact-box">
-                Please contact us at <a href="mailto:offofcoopph@outlook.com">offofcoopph@outlook.com</a> for the latest Recollection schedule in your area.
-            </div>
-        </div>
-
-        <div id="retreats" class="content-section">
-            <h3>Retreats</h3>
-            <p>Retreats are a days-long break to spend time with God in silence and prayer. It's a privileged opportunity to grow in love for God, to come to know ourselves better, and to know Him more deeply. It is a time to renew our faith, welcome the Holy Spirit's light, and calmly and thoughtfully explore the areas in which we can move forward in our Christian life.</p>
-            <p>The retreats, where possible, are run in “Study Centres”, operated by the Work.</p>
-            <table>
-                <thead><tr><th>Venue</th><th>For availability and bookings</th></tr></thead>
-                <tbody>
-                    <tr><td>Kenthurst Study Centre</td><td><a href="https://mensactivities.org/" target="_blank" style="color: var(--opus-gold);">https://mensactivities.org/</a></td></tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div id="projects" class="content-section">
-            <h3>Projects</h3>
-            <p>Cooperators and friends are involved in various apostolic and social projects across Australia. These initiatives focus on professional ethics, family life, youth education, and social service.</p>
-            <div class="contact-box">
-                If you have a project or initiative you would like to share with the Cooperator community, please contact the office.
-            </div>
+            <p>If you wish to participate, or for additional information please contact us on: <strong>offofcoopph@outlook.com</strong></p>
         </div>
 
         <div id="circles" class="content-section">
             <h3>Cooperator Circles</h3>
             <p>Cooperator Circles are for cooperators. The point of the circle is to make space for Jesus to come into the personal details of your daily life. It shouldn’t end when the person giving it stops talking. In a sense, that’s when it starts: when you pray about it, think about what you heard, struggle to put it into practice, and bring it to your family and friends.</p>
             <table>
-                <thead><tr><th>Suburb</th><th>Date and Frequency</th><th>Time</th></tr></thead>
+                <thead><tr><th>Suburb</th><th>Frequency</th><th>Time</th></tr></thead>
                 <tbody>
-                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday of the month</td><td>8:00pm – 9:00 pm</td></tr>
-                    <tr><td>Pennant Hills</td><td>Every 1st Monday of the month</td><td>7:30pm – 8:30 pm</td></tr>
-                    <tr><td>Zoom</td><td>Every 4th Tuesday of the month</td><td>8:15pm – 9:00 pm</td></tr>
+                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday</td><td>8:00pm – 9:00 pm</td></tr>
+                    <tr><td>Pennant Hills</td><td>Every 1st Monday</td><td>7:30pm – 8:30 pm</td></tr>
+                    <tr><td>Zoom</td><td>Every 4th Tuesday</td><td>8:15pm – 9:00 pm</td></tr>
                 </tbody>
             </table>
+            <p>If you wish to participate, or for additional information please contact us on: <strong>offofcoopph@outlook.com</strong></p>
+        </div>
+
+        <div id="recollections" class="content-section">
+            <h3>Recollections</h3>
+            <p>Recollections are a chance to step back from the whirlwind of daily tasks for around 2 hours of quiet prayer spent looking at God, the world, and ourselves. It includes a spiritual reading, a meditation given by a priest, examination of conscience, a talk, and benediction. The most important thing is to put yourself in front of our Lord, to look at Him and to let Him look at you.</p>
+            <p>If you wish to participate, or for additional information please contact us on: <strong>offofcoopph@outlook.com</strong></p>
+        </div>
+
+        <div id="retreats" class="content-section">
+            <h3>Retreats</h3>
+            <p>Retreats are a days-long break to spend time with God in silence and prayer. It is a time to renew our faith, welcome the Holy Spirit's light, and calmly explore the areas in which we can move forward in our Christian life.</p>
+            <table>
+                <thead><tr><th>Venue</th><th>Bookings</th></tr></thead>
+                <tbody><tr><td>Kenthurst Study Centre</td><td><a href="https://mensactivities.org/" target="_blank">mensactivities.org</a></td></tr></tbody>
+            </table>
+        </div>
+
+        <div id="projects" class="content-section">
+            <h3>Projects</h3>
+            <p>Cooperators and friends are involved in various apostolic and social projects across Australia focusing on professional ethics, family, and youth education.</p>
         </div>
 
         <div id="events" class="content-section">
             <h3>Events</h3>
-            <p>Beyond our regular formational activities, we host special events throughout the year to foster friendship and community.</p>
             <table>
                 <thead><tr><th>Event</th><th>Dates</th><th>Venues</th></tr></thead>
                 <tbody>
                     <tr><td>Cooperator Weekend</td><td>TBA</td><td>TBA</td></tr>
                     <tr><td>End of Year Dinner</td><td>December</td><td>TBA</td></tr>
-                    <tr><td>Get-togethers, BBQ, etc.</td><td>Regularly scheduled</td><td>Various Locations</td></tr>
                 </tbody>
             </table>
         </div>
@@ -167,8 +150,8 @@
     </div>
 
     <footer>
-        <p>If you wish to participate, or for additional information please contact us on: <strong><a href="mailto:offofcoopph@outlook.com" style="color: white;">offofcoopph@outlook.com</a></strong></p>
-        &copy; 2026 Opus Dei Cooperators Australia
+        &copy; 2026 Opus Dei Cooperators Australia<br>
+        Contact: <a href="mailto:offofcoopph@outlook.com" style="color: white;">offofcoopph@outlook.com</a>
     </footer>
 
     <script>
@@ -181,6 +164,5 @@
             window.scrollTo(0, 0);
         }
     </script>
-
 </body>
 </html>
