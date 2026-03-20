@@ -13,18 +13,18 @@
         }
         body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: var(--bg-warm); color: var(--text-dark); line-height: 1.6; }
         
-        /* Navigation */
         nav { background-color: var(--opus-navy); padding: 15px 0; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
         nav a { color: #ffffff; text-decoration: none; margin: 5px 12px; font-family: sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
         nav a:hover { color: var(--opus-gold); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 70vh; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 75vh; }
         
-        /* Section Visibility Logic */
-        .content-section { display: none; } /* Hidden by default */
-        .active-section { display: block !important; } /* Shown when active */
+        /* Tab Visibility */
+        .content-section { display: none; } 
+        .active-section { display: block !important; animation: fadeIn 0.5s; }
 
-        /* Layout Elements */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
         .hero-flex { display: flex; align-items: center; gap: 40px; margin-bottom: 20px; text-align: left; }
         .img-container { flex: 0 0 320px; }
         .img-container img { width: 100%; border-radius: 4px; box-shadow: 12px 12px 0px var(--opus-gold); }
@@ -33,14 +33,14 @@
         h2 { font-family: sans-serif; font-weight: 300; color: var(--opus-gold); margin-top: 5px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 2px; }
         .quote-box { margin-top: 25px; font-style: italic; font-size: 1.1rem; color: #444; border-left: 3px solid var(--opus-gold); padding-left: 20px; }
 
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-family: sans-serif; background: white; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; font-family: sans-serif; background: white; }
         th { background-color: var(--opus-navy); color: white; text-align: left; padding: 12px; text-transform: uppercase; font-size: 0.8rem; }
         td { padding: 15px 12px; border-bottom: 1px solid #ddd; }
         tr:nth-child(even) { background-color: rgba(184, 146, 78, 0.05); }
 
-        .contact-box { background-color: white; padding: 25px; border-radius: 4px; border-top: 3px solid var(--opus-gold); margin-top: 20px; text-align: center; }
+        .contact-box { background-color: white; padding: 25px; border-radius: 4px; border-top: 3px solid var(--opus-gold); margin-top: 30px; text-align: center; }
         .youtube-btn { display: inline-block; margin: 20px 0; padding: 12px 25px; background-color: #cd201f; color: white !important; text-decoration: none; font-family: sans-serif; font-weight: bold; border-radius: 5px; }
-        footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; }
+        footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
         
         @media (max-width: 768px) {
             .hero-flex { flex-direction: column; text-align: center; }
@@ -71,7 +71,7 @@
                     <h1>OPUS DEI COOPERATORS</h1>
                     <h2>In Australia</h2>
                     <div class="quote-box">
-                        “Opus Dei proposes to help ordinary citizens like yourself to lead a fully Christian life...”
+                        “Opus Dei proposes to help ordinary citizens like yourself to lead a fully Christian life, without modifying their normal way of life, their daily work, their aspirations and ambitions.”
                         <p><strong>— St Josemaría</strong></p>
                     </div>
                 </div>
@@ -84,72 +84,82 @@
                     <div class="quote-box">
                         <p>Saint Josemaría often said that the entire work of Opus Dei is summed up in providing formation. A formation that “does not concern only one part of the person, but the entire being: it has to reach equally the intellect, heart and will.”</p>
                     </div>
-                    <a href="https://www.youtube.com/watch?v=FYXg1Q1oCy4" target="_blank" class="youtube-btn">▶ Watch Video</a>
+                    <a href="https://www.youtube.com/watch?v=FYXg1Q1oCy4" target="_blank" class="youtube-btn">▶ Watch "Working Together" Video</a>
                 </div>
             </div>
         </div>
 
         <div id="news" class="content-section">
             <h3>News & Updates</h3>
-            <p>Stay informed about our latest activities and updates across Australia.</p>
-            <div class="contact-box">Welcome to our new website! Check back here for updates.</div>
+            <p>Welcome to our online platform. This section will feature recent highlights, photos, and news from our Cooperator communities across Australia.</p>
+            <div class="contact-box">
+                <strong>New Website Launch</strong><br>
+                We are excited to provide this central hub for schedules and information. Check back regularly for new updates.
+            </div>
         </div>
 
         <div id="talks" class="content-section">
             <h3>Talks</h3>
-            <p>Talks are available for all desiring to learn more about the Catholic faith. They run for approximately 30 minutes once a month.</p>
+            <p>Talks are available for all desiring to learn more about the Catholic faith. They run for approximately 30 minutes once a month, followed by a get together where participators get to meet and know each other.</p>
             <table>
-                <thead><tr><th>Suburb</th><th>Frequency</th><th>Time</th></tr></thead>
+                <thead><tr><th>Suburb</th><th>Date and Frequency</th><th>Time</th></tr></thead>
                 <tbody>
-                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday</td><td>8:00pm</td></tr>
-                    <tr><td>Pennant Hills</td><td>Every 1st Monday</td><td>7:30pm</td></tr>
+                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday of the month</td><td>8:00pm – 9:00 pm</td></tr>
+                    <tr><td>Pennant Hills</td><td>Every 1st Monday of the month</td><td>7:30pm – 8:30 pm</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div id="recollections" class="content-section">
             <h3>Recollections</h3>
-            <p>Recollections are a chance to step back for around 2 hours of quiet prayer spent looking at God, the world, and ourselves.</p>
-            <div class="contact-box">Contact us for the latest schedule in your area.</div>
+            <p>Recollections are a chance to step back from the whirlwind of daily tasks for around 2 hours of quiet prayer spent looking at God, the world, and ourselves. It includes a spiritual reading, a meditation given by a priest, examination of conscience, a talk, and benediction. The most important thing is to put yourself in front of our Lord, to look at Him and to let Him look at you.</p>
+            <div class="contact-box">
+                Please contact us at <a href="mailto:offofcoopph@outlook.com">offofcoopph@outlook.com</a> for the latest Recollection schedule in your area.
+            </div>
         </div>
 
         <div id="retreats" class="content-section">
             <h3>Retreats</h3>
-            <p>Retreats are a days-long break to spend time with God in silence and prayer at Kenthurst Study Centre.</p>
+            <p>Retreats are a days-long break to spend time with God in silence and prayer. It's a privileged opportunity to grow in love for God, to come to know ourselves better, and to know Him more deeply. It is a time to renew our faith, welcome the Holy Spirit's light, and calmly and thoughtfully explore the areas in which we can move forward in our Christian life.</p>
+            <p>The retreats, where possible, are run in “Study Centres”, operated by the Work.</p>
             <table>
-                <thead><tr><th>Venue</th><th>Bookings</th></tr></thead>
+                <thead><tr><th>Venue</th><th>For availability and bookings</th></tr></thead>
                 <tbody>
-                    <tr><td>Kenthurst Study Centre</td><td><a href="https://mensactivities.org/" target="_blank">mensactivities.org</a></td></tr>
+                    <tr><td>Kenthurst Study Centre</td><td><a href="https://mensactivities.org/" target="_blank" style="color: var(--opus-gold);">https://mensactivities.org/</a></td></tr>
                 </tbody>
             </table>
         </div>
 
         <div id="projects" class="content-section">
             <h3>Projects</h3>
-            <p>Information about current apostolic and social projects supported by the Cooperators in Australia.</p>
-            <div class="contact-box">Project details coming soon.</div>
+            <p>Cooperators and friends are involved in various apostolic and social projects across Australia. These initiatives focus on professional ethics, family life, youth education, and social service.</p>
+            <div class="contact-box">
+                If you have a project or initiative you would like to share with the Cooperator community, please contact the office.
+            </div>
         </div>
 
         <div id="circles" class="content-section">
             <h3>Cooperator Circles</h3>
-            <p>The point of the circle is to make space for Jesus to come into the personal details of your daily life.</p>
+            <p>Cooperator Circles are for cooperators. The point of the circle is to make space for Jesus to come into the personal details of your daily life. It shouldn’t end when the person giving it stops talking. In a sense, that’s when it starts: when you pray about it, think about what you heard, struggle to put it into practice, and bring it to your family and friends.</p>
             <table>
-                <thead><tr><th>Suburb</th><th>Frequency</th><th>Time</th></tr></thead>
+                <thead><tr><th>Suburb</th><th>Date and Frequency</th><th>Time</th></tr></thead>
                 <tbody>
-                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday</td><td>8:00pm</td></tr>
-                    <tr><td>Zoom</td><td>Every 4th Tuesday</td><td>8:15pm</td></tr>
+                    <tr><td>Castle Hill</td><td>Every 2nd Tuesday of the month</td><td>8:00pm – 9:00 pm</td></tr>
+                    <tr><td>Pennant Hills</td><td>Every 1st Monday of the month</td><td>7:30pm – 8:30 pm</td></tr>
+                    <tr><td>Zoom</td><td>Every 4th Tuesday of the month</td><td>8:15pm – 9:00 pm</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div id="events" class="content-section">
             <h3>Events</h3>
-            <p>Upcoming events including weekends, dinners, and regular social gatherings.</p>
+            <p>Beyond our regular formational activities, we host special events throughout the year to foster friendship and community.</p>
             <table>
                 <thead><tr><th>Event</th><th>Dates</th><th>Venues</th></tr></thead>
                 <tbody>
                     <tr><td>Cooperator Weekend</td><td>TBA</td><td>TBA</td></tr>
                     <tr><td>End of Year Dinner</td><td>December</td><td>TBA</td></tr>
+                    <tr><td>Get-togethers, BBQ, etc.</td><td>Regularly scheduled</td><td>Various Locations</td></tr>
                 </tbody>
             </table>
         </div>
@@ -157,20 +167,17 @@
     </div>
 
     <footer>
-        <p>Contact: <a href="mailto:offofcoopph@outlook.com" style="color: white;">offofcoopph@outlook.com</a></p>
+        <p>If you wish to participate, or for additional information please contact us on: <strong><a href="mailto:offofcoopph@outlook.com" style="color: white;">offofcoopph@outlook.com</a></strong></p>
         &copy; 2026 Opus Dei Cooperators Australia
     </footer>
 
     <script>
         function showSection(sectionId) {
-            // 1. Hide all sections
             var sections = document.getElementsByClassName('content-section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active-section');
             }
-            // 2. Show only the clicked section
             document.getElementById(sectionId).classList.add('active-section');
-            // 3. Scroll to top of the page
             window.scrollTo(0, 0);
         }
     </script>
