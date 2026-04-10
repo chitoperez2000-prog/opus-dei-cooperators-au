@@ -33,11 +33,13 @@
 
         table { width: 100%; border-collapse: collapse; margin: 25px 0; font-family: sans-serif; background: white; }
         th { background-color: var(--opus-navy); color: white; text-align: left; padding: 12px; text-transform: uppercase; font-size: 0.8rem; }
-        td { padding: 15px 12px; border-bottom: 1px solid #ddd; }
+        td { padding: 15px 12px; border-bottom: 1px solid #ddd; font-size: 0.95rem; }
         tr:nth-child(even) { background-color: rgba(184, 146, 78, 0.05); }
 
-        .contact-box { background-color: white; padding: 25px; border-radius: 4px; border-top: 3px solid var(--opus-gold); margin-top: 30px; text-align: center; }
-        .youtube-btn { display: inline-block; margin: 20px 0; padding: 12px 25px; background-color: #cd201f; color: white !important; text-decoration: none; font-family: sans-serif; font-weight: bold; border-radius: 5px; }
+        .project-card { background: white; padding: 25px; border-radius: 4px; border-left: 4px solid var(--opus-gold); margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .donate-link { display: inline-block; margin-top: 10px; font-family: sans-serif; font-weight: bold; color: #1a365d; text-decoration: none; border-bottom: 2px solid var(--opus-gold); }
+        .donate-link:hover { color: var(--opus-gold); }
+
         footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
         
         @media (max-width: 768px) { .hero-flex { flex-direction: column; text-align: center; } .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; } }
@@ -86,7 +88,7 @@
 
         <div id="news" class="content-section">
             <h3>News & Updates</h3>
-            <div class="contact-box"><strong>New Website Launch</strong><br>Welcome to our new online home. Stay tuned for further updates.</div>
+            <div class="contact-box"><strong>New Website Launch</strong><br>Check back regularly for community highlights and updates.</div>
         </div>
 
         <div id="talks" class="content-section">
@@ -119,40 +121,101 @@
 
         <div id="recollections" class="content-section">
             <h3>Recollections</h3>
-            <p>Recollections are a chance to step back from the whirlwind of daily tasks for around 2 hours of quiet prayer spent looking at God, the world, and ourselves. It includes a spiritual reading, a meditation given by a priest, examination of conscience, a talk, and benediction. The most important thing is to put yourself in front of our Lord, to look at Him and to let Him look at you.</p>
-            
             <table>
                 <thead>
-                    <tr>
-                        <th>Address</th>
-                        <th>Date / Frequency</th>
-                        <th>Time</th>
-                    </tr>
+                    <tr><th>Center / Organiser</th><th>Address</th><th>Date / Frequency</th><th>Time</th></tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>TBA</td>
-                        <td>TBA</td>
-                        <td>TBA</td>
-                    </tr>
+                    <tr><td>Nairana</td><td>Redfield College, Dural</td><td>2nd Wednesdays</td><td>7:30 PM</td></tr>
+                    <tr><td>Nairana</td><td>Redfield College, Dural</td><td>Thursday after 2nd Wednesday</td><td>7:30 PM</td></tr>
+                    <tr><td>Nairana</td><td>Nairana, Pennant Hills</td><td>3rd Tuesdays</td><td>10:30 AM</td></tr>
+                    <tr><td>Nairana</td><td>Nairana, Pennant Hills</td><td>4th Saturdays (Young Professionals)</td><td>9:15 AM</td></tr>
+                    <tr><td><a href="https://mirrabooka.org.au/dads" target="_blank">Mirrabooka</a></td><td>St Aidan’s Church, Rooty Hill</td><td>2nd Fridays</td><td>7:45 PM</td></tr>
+                    <tr><td>Mirrabooka</td><td>Mirrabooka, Baulkham Hills</td><td>Wednesday before 2nd Friday (Young Men)</td><td>6:45 PM</td></tr>
+                    <tr><td>Mirrabooka</td><td>Wollemi College, Werrington</td><td>Monday before 2nd Friday</td><td>7:00 PM</td></tr>
+                    <tr><td>Westburne</td><td>St Dominic’s Catholic Church, Homebush</td><td>3rd Wednesdays</td><td>7:15 PM</td></tr>
+                    <tr><td>Dartbrooke</td><td>Dartbrooke</td><td>3rd Wednesdays</td><td>7:30 PM</td></tr>
+                    <tr><td>Warrane</td><td>Warrane College Chapel</td><td>2nd Tuesdays</td><td>7:15 PM</td></tr>
                 </tbody>
             </table>
-
             <p>If you wish to participate, or for additional information please contact us on: <strong>offofcoopph@outlook.com</strong></p>
         </div>
 
         <div id="retreats" class="content-section">
             <h3>Retreats</h3>
-            <p>Retreats are a days-long break to spend time with God in silence and prayer. It's a privileged opportunity to grow in love for God, to come to know ourselves better, and to know Him more deeply. It is a time to renew our faith, welcome the Holy Spirit's light, and calmly and thoughtfully explore the areas in which we can move forward in our Christian life. The retreats, where possible, are run in “Study Centres”, operated by the Work.</p>
+            <h4>Kenthurst Bookings</h4>
+            <p><strong>Website:</strong> <a href="https://mensactivities.org" target="_blank">mensactivities.org</a><br>
+            <strong>Email:</strong> <a href="mailto:mensretreats@kenthurst.org.au">mensretreats@kenthurst.org.au</a></p>
+
+            <h4>Non-Kenthurst Bookings</h4>
+            <p>To book, please email the contact person listed below and <strong>cc: Ian Kwan</strong> (<a href="mailto:ian.pl.kwan@gmail.com">ian.pl.kwan@gmail.com</a>).</p>
             <table>
-                <thead><tr><th>Venue</th><th>Bookings</th></tr></thead>
-                <tbody><tr><td>Kenthurst Study Centre</td><td><a href="https://mensactivities.org/" target="_blank">mensactivities.org</a></td></tr></tbody>
+                <thead><tr><th>Location</th><th>Contact Person</th><th>Phone</th></tr></thead>
+                <tbody>
+                    <tr><td>Castlemaine</td><td>Andy Mullins (<a href="mailto:apjmvic@gmail.com">apjmvic@gmail.com</a>)</td><td>0419 127 057</td></tr>
+                    <tr><td>Galong</td><td>Joe Arevalo (<a href="mailto:jl.areva@gmail.com">jl.areva@gmail.com</a>)</td><td>0410 325 599</td></tr>
+                    <tr><td>Bargo</td><td>Gary Steller (<a href="mailto:gws1156@gmail.com">gws1156@gmail.com</a>)</td><td>0421 688 813</td></tr>
+                    <tr><td>Brooklands NZ</td><td>Luis Trullos (<a href="mailto:luistrullols1@gmail.com">luistrullols1@gmail.com</a>)</td><td>+64 21 915 294</td></tr>
+                </tbody>
+            </table>
+
+            <h4>2026 Retreats for Young Professionals</h4>
+            <table>
+                <thead><tr><th>Dates</th><th>Organiser</th></tr></thead>
+                <tbody>
+                    <tr><td>June 12-14 (Fri-Sun)</td><td>Dartbrooke (Paul McMahon)</td></tr>
+                    <tr><td>Oct 9-11 (Fri-Sun)</td><td>Nairana (Ian Kwan)</td></tr>
+                    <tr><td>Oct 16-18 (Fri-Sun)</td><td>Mirrabooka (Charles Burfitt) – <em>TBC</em></td></tr>
+                </tbody>
             </table>
         </div>
 
         <div id="projects" class="content-section">
-            <h3>Projects</h3>
-            <p>Cooperators and friends are involved in various apostolic and social projects across Australia focusing on professional ethics, family, and youth education.</p>
+            <h3>The Education Development Association (EDA)</h3>
+            <p>The Education Development Association (EDA) is a registered charitable public company, limited by guarantee, and was established on 4 November 1964, setting out to empower young people to achieve their full potential through the delivery of educational programmes focused on character building.</p>
+            <p>EDA owns and operates a number of Study Centres around Australia. The spiritual formation and faith-based activities at its Centres are entrusted to Opus Dei. EDA now has study centres in NSW, QLD, VIC, and co-ordinates activities nationwide.</p>
+
+            <div class="project-card">
+                <strong>Aldridge Study Centre (QLD)</strong><br>
+                Activities tailored for high school boys, university students, and men putting talents at the service of family and society.<br>
+                <a href="https://www.givenow.com.au/aldridge" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Dartbrooke Study Centre (NSW)</strong><br>
+                Caters for university students, providing input and guidance to help them prepare for professional and family commitments.<br>
+                <a href="https://www.givenow.com.au/dartbrookestudycentre" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Kenthurst Study Centre (NSW)</strong><br>
+                Residential programs and weekend retreats for men, women and diocesan priests. Set in 25 acres of native bushland, ideal for study and reflection.<br>
+                <a href="https://www.givenow.com.au/kenthurststudycentre" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Mirrabooka Study Centre (NSW)</strong><br>
+                Educational centre for boys and young men in Western Sydney, helping them grow in character and competency through mentoring.<br>
+                <a href="https://www.givenow.com.au/dartbrookestudycentre" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Nairana Study Centre (NSW)</strong><br>
+                Purpose-built centre for high school boys (Years 7-12). Features study areas, a chapel, workshop, and indoor sports space.<br>
+                <a href="https://www.givenow.com.au/dartbrookestudycentre" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Warrane College, UNSW</strong><br>
+                Affiliated residential college for men at UNSW, providing accommodation and educational programs for regional and international students.<br>
+                <a href="https://www.givenow.com.au/warranecollege" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
+
+            <div class="project-card">
+                <strong>Drummond Study Centre (VIC)</strong><br>
+                Offers activities for university students and working people, and operates the Ventura Club for high school boys.<br>
+                <a href="https://www.givenow.com.au/drummondstudycentre" class="donate-link" target="_blank">TO DONATE</a>
+            </div>
         </div>
 
         <div id="events" class="content-section">
@@ -185,4 +248,3 @@
     </script>
 </body>
 </html>
-
