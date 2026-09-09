@@ -260,30 +260,26 @@
             document.getElementById(sectionId).classList.add('active-section');
         }
 
-        function checkHashAndNavigate() {
-            var hash = window.location.hash.toLowerCase();
-            if (hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
+        function handleNavigation() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var tab = urlParams.get('tab');
+            var hash = window.location.hash;
+
+            if (tab === 'news' || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
-                setTimeout(function() {
-                    var targetId = hash.replace('#', '');
-                    var element = document.getElementById(targetId);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    } else {
-                        window.scrollTo(0, 0);
-                    }
-                }, 150);
+                if (hash) {
+                    setTimeout(function() {
+                        var element = document.querySelector(hash);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }, 200);
+                }
             }
         }
 
-        // Run immediately when script loads
-        checkHashAndNavigate();
-
-        // Run again once DOM is fully loaded
-        window.addEventListener('DOMContentLoaded', checkHashAndNavigate);
-        
-        // Listen for hash changes if user clicks links while already on the page
-        window.addEventListener('hashchange', checkHashAndNavigate);
+        window.addEventListener('DOMContentLoaded', handleNavigation);
+        window.addEventListener('hashchange', handleNavigation);
     </script>
 </body>
 </html>
