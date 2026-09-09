@@ -29,6 +29,7 @@
         .text-container { flex: 1; }
         h1, h3 { font-size: 2.2rem; color: var(--opus-navy); margin: 0; padding-top: 20px;}
         h2 { font-family: sans-serif; font-weight: 300; color: var(--opus-gold); margin-top: 5px; text-transform: uppercase; font-size: 1.1rem; letter-spacing: 2px; }
+        h4 { font-size: 1.5rem; color: var(--opus-navy); margin-top: 0; margin-bottom: 10px; }
         .quote-box { margin-top: 25px; font-style: italic; font-size: 1.1rem; color: #444; border-left: 3px solid var(--opus-gold); padding-left: 20px; }
 
         table { width: 100%; border-collapse: collapse; margin: 25px 0; font-family: sans-serif; background: white; }
@@ -40,8 +41,7 @@
         .donate-link { display: inline-block; margin-top: 10px; font-family: sans-serif; font-weight: bold; color: #1a365d; text-decoration: none; border-bottom: 2px solid var(--opus-gold); }
         .donate-link:hover { color: var(--opus-gold); }
 
-        /* Full page PDF sizing adjustments */
-        .pdf-container { position: relative; width: 100%; height: 1000px; margin-top: 15px; }
+        .pdf-container { position: relative; width: 100%; height: 800px; margin-top: 15px; }
         .pdf-container iframe { width: 100%; height: 100%; border: 1px solid #ddd; border-radius: 4px; }
 
         footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
@@ -49,7 +49,7 @@
         @media (max-width: 768px) { 
             .hero-flex { flex-direction: column; text-align: center; } 
             .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; } 
-            .pdf-container { height: 600px; }
+            .pdf-container { height: 500px; }
         }
     </style>
 </head>
@@ -97,14 +97,26 @@
         <div id="news" class="content-section">
             <h3>News & Updates</h3>
             
-            <div class="news-card">
-                <p>Read the latest news update below. If you are on a mobile device or the preview does not load, you can open or download the PDF directly.</p>
-                <p><a href="Newsletter-2.pdf" target="_blank" class="donate-link">📄 Open / Download Newsletter PDF</a></p>
-                
+            <!-- VIETNAM WORKCAMP -->
+            <div id="vietnam-workcamp" class="news-card">
+                <h4>Vietnam Workcamp</h4>
+                <p><a href="Vietnam-Workcamp-2026.pdf" target="_blank" class="donate-link">📄 Open / Download PDF</a></p>
                 <div class="pdf-container">
-                    <iframe src="Newsletter-2.pdf#view=FitH">
+                    <iframe src="Vietnam-Workcamp-2026.pdf#view=FitH">
                         This browser does not support embedded PDFs. Please download the PDF to view it: 
-                        <a href="Newsletter-2.pdf">Download PDF</a>
+                        <a href="Vietnam-Workcamp-2026.pdf">Download PDF</a>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- MELBOURNE CULTURAL TRIP -->
+            <div id="melbourne-cultural-trip" class="news-card">
+                <h4>Melbourne Cultural Trip</h4>
+                <p><a href="Melbourne-Cultural-Trip.pdf" target="_blank" class="donate-link">📄 Open / Download PDF</a></p>
+                <div class="pdf-container">
+                    <iframe src="Melbourne-Cultural-Trip.pdf#view=FitH">
+                        This browser does not support embedded PDFs. Please download the PDF to view it: 
+                        <a href="Melbourne-Cultural-Trip.pdf">Download PDF</a>
                     </iframe>
                 </div>
             </div>
@@ -248,6 +260,20 @@
             document.getElementById(sectionId).classList.add('active-section');
             window.scrollTo(0, 0);
         }
+
+        // Handle URL anchor links on page load
+        window.addEventListener('load', function() {
+            var hash = window.location.hash;
+            if (hash === '#vietnam-workcamp' || hash === '#melbourne-cultural-trip') {
+                showSection('news');
+                setTimeout(function() {
+                    var element = document.querySelector(hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+            }
+        });
     </script>
 </body>
 </html>
