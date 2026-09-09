@@ -11,13 +11,24 @@
             --bg-warm: #fdfbf7;
             --text-dark: #2d3436;
         }
-        body { font-family: 'Georgia', serif; margin: 0; padding: 0; background-color: var(--bg-warm); color: var(--text-dark); line-height: 1.6; }
+        
+        /* Enforce global responsive container sizing */
+        html, body { 
+            font-family: 'Georgia', serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-warm); 
+            color: var(--text-dark); 
+            line-height: 1.6;
+            width: 100%;
+            overflow-x: hidden; /* Prevents mobile page shrinking/zooming out */
+        }
         
         nav { background-color: var(--opus-navy); padding: 15px 0; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
         nav a { color: #ffffff; text-decoration: none; margin: 5px 12px; font-family: sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; }
         nav a:hover { color: var(--opus-gold); }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 75vh; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; min-height: 75vh; box-sizing: border-box; }
         
         .content-section { display: none; } 
         .active-section { display: block !important; animation: fadeIn 0.5s; }
@@ -46,10 +57,13 @@
 
         footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
         
+        /* Mobile Screen Adjustments */
         @media (max-width: 768px) { 
             .hero-flex { flex-direction: column; text-align: center; } 
             .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; } 
-            .pdf-container { height: 500px; }
+            .pdf-container { height: 450px; max-width: 100%; overflow: hidden; }
+            .pdf-container iframe { width: 100%; min-width: 100%; }
+            .container { padding: 20px 15px; }
         }
     </style>
 </head>
@@ -265,7 +279,6 @@
             var itemParam = urlParams.get('item');
             var hash = window.location.hash.toLowerCase();
 
-            // Check if navigating to news via item parameter or hash anchor
             if (itemParam || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
 
