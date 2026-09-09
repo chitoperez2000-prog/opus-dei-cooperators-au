@@ -258,22 +258,33 @@
                 sections[i].classList.remove('active-section');
             }
             document.getElementById(sectionId).classList.add('active-section');
-            window.scrollTo(0, 0);
         }
 
-        // Handle URL anchor links on page load
-        window.addEventListener('load', function() {
-            var hash = window.location.hash;
-            if (hash === '#vietnam-workcamp' || hash === '#melbourne-cultural-trip') {
+        function checkHashAndNavigate() {
+            var hash = window.location.hash.toLowerCase();
+            if (hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
                 setTimeout(function() {
-                    var element = document.querySelector(hash);
+                    var targetId = hash.replace('#', '');
+                    var element = document.getElementById(targetId);
                     if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    } else {
+                        window.scrollTo(0, 0);
                     }
-                }, 100);
+                }, 150);
             }
-        });
+        }
+
+        // Run immediately when script loads
+        checkHashAndNavigate();
+
+        // Run again once DOM is fully loaded
+        window.addEventListener('DOMContentLoaded', checkHashAndNavigate);
+        
+        // Listen for hash changes if user clicks links while already on the page
+        window.addEventListener('hashchange', checkHashAndNavigate);
     </script>
 </body>
 </html>
+
