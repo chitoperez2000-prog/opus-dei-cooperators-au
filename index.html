@@ -262,18 +262,27 @@
 
         function handleNavigation() {
             var urlParams = new URLSearchParams(window.location.search);
-            var tab = urlParams.get('tab');
-            var hash = window.location.hash;
+            var itemParam = urlParams.get('item');
+            var hash = window.location.hash.toLowerCase();
 
-            if (tab === 'news' || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
+            // Check if navigating to news via item parameter or hash anchor
+            if (itemParam || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
-                if (hash) {
+
+                var targetId = '';
+                if (itemParam === 'melbourne' || hash.includes('melbourne')) {
+                    targetId = 'melbourne-cultural-trip';
+                } else if (itemParam === 'vietnam' || hash.includes('vietnam')) {
+                    targetId = 'vietnam-workcamp';
+                }
+
+                if (targetId) {
                     setTimeout(function() {
-                        var element = document.querySelector(hash);
+                        var element = document.getElementById(targetId);
                         if (element) {
                             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
-                    }, 200);
+                    }, 250);
                 }
             }
         }
