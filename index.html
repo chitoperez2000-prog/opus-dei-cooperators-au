@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,6 @@
             --text-dark: #2d3436;
         }
         
-        /* Enforce global responsive container sizing */
         html, body { 
             font-family: 'Georgia', serif; 
             margin: 0; 
@@ -21,7 +21,7 @@
             color: var(--text-dark); 
             line-height: 1.6;
             width: 100%;
-            overflow-x: hidden; /* Prevents mobile page shrinking/zooming out */
+            overflow-x: hidden;
         }
         
         nav { background-color: var(--opus-navy); padding: 15px 0; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; }
@@ -48,7 +48,7 @@
         td { padding: 15px 12px; border-bottom: 1px solid #ddd; font-size: 0.95rem; }
         tr:nth-child(even) { background-color: rgba(184, 146, 78, 0.05); }
 
-        .project-card, .news-card { background: white; padding: 25px; border-radius: 4px; border-left: 4px solid var(--opus-gold); margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .project-card, .news-card, .indulgence-card { background: white; padding: 25px; border-radius: 4px; border-left: 4px solid var(--opus-gold); margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
         .donate-link { display: inline-block; margin-top: 10px; font-family: sans-serif; font-weight: bold; color: #1a365d; text-decoration: none; border-bottom: 2px solid var(--opus-gold); }
         .donate-link:hover { color: var(--opus-gold); }
 
@@ -57,7 +57,6 @@
 
         footer { background-color: var(--opus-navy); color: white; text-align: center; padding: 30px; font-family: sans-serif; font-size: 12px; margin-top: 50px; }
         
-        /* Mobile Screen Adjustments */
         @media (max-width: 768px) { 
             .hero-flex { flex-direction: column; text-align: center; } 
             .img-container { flex: 0 0 auto; width: 100%; max-width: 280px; } 
@@ -75,6 +74,7 @@
         <a onclick="showSection('recollections')">Recollections</a>
         <a onclick="showSection('retreats')">Retreats</a>
         <a onclick="showSection('projects')">Projects</a>
+        <a onclick="showSection('indulgences')">Indulgences</a>
         <a onclick="showSection('events')">Events</a>
     </nav>
 
@@ -245,6 +245,50 @@
             </div>
         </div>
 
+        <!-- INDULGENCES SECTION -->
+        <div id="indulgences" class="content-section">
+            <h3>Indulgences</h3>
+            <p>Indulgences which may be obtained by Cooperators of the Prelature of the Holy Cross and Opus Dei[cite: 2].</p>
+
+            <div class="indulgence-card">
+                <h4>I. Plenary Indulgence</h4>
+                <p>Available under the usual conditions (sacramental confession, the reception of Holy Communion, prayer for the Roman Pontiff and his intentions) with their heart wholly detached from sin[cite: 2]:</p>
+                <ul>
+                    <li>On the date of appointment as a Cooperator[cite: 2].</li>
+                    <li><strong>February 14</strong>, which in the Prelature is the feast of Holy Mary Mother of Fair Love, and also the anniversary of the beginning of the work of Opus Dei with women in 1930 and of the foundation of the Priestly Society of the Holy Cross in 1943[cite: 2].</li>
+                    <li><strong>March 19</strong>, solemnity of St. Joseph[cite: 2].</li>
+                    <li><strong>June 29</strong>, solemnity of the Apostles Sts. Peter and Paul[cite: 2].</li>
+                    <li><strong>September 14</strong>, feast of the Exaltation of the Holy Cross[cite: 2].</li>
+                    <li><strong>September 29</strong>, feast of Sts. Michael, Gabriel and Raphael, Archangels[cite: 2].</li>
+                    <li><strong>October 2</strong>, memorial (a solemnity in the Prelature) of the Holy Guardian Angels and the anniversary of the founding of Opus Dei[cite: 2].</li>
+                    <li><strong>December 27</strong>, feast of St. John, Apostle[cite: 2].</li>
+                    <li>Whenever they attend a spiritual retreat which lasts at least three days[cite: 2].</li>
+                    <li>At the hour of death, if during their life they have habitually prayed some prayers; or if, in that moment, they fulfill the conditions for a plenary indulgence[cite: 2].</li>
+                </ul>
+            </div>
+
+            <div class="indulgence-card">
+                <h4>II. Partial Indulgences</h4>
+                <ul>
+                    <li>When they attend a Circle for Cooperators[cite: 2].</li>
+                    <li>When they attend a day or evening of recollection[cite: 2].</li>
+                    <li>Whenever they recite an aspiration while kissing the wooden Cross in the oratories of Opus Dei Centres[cite: 2, 3].</li>
+                    <li>Whenever they say a pious invocation during their work, be it manual or intellectual[cite: 3].</li>
+                    <li>Whenever they say an aspiration while carrying out the works of piety or apostolate by which they cooperate in the spiritual work of the Prelature[cite: 3].</li>
+                </ul>
+                <p style="font-size: 0.85rem; color: #666; margin-top: 15px;">
+                    <em>(Rescript No. 34/14 of April 28, 2014 & No. 17/75 of February 12, 1975 of the Apostolic Penitentiary; Enchiridion Indulgentiarum. Normae et concessiones, 1999.)</em><br>
+                    This is a translation of the original which is kept in our archives.<br>
+                    Rome, February 14, 2015 — Dr. Ernst Burkhart[cite: 3]
+                </p>
+            </div>
+
+            <div class="indulgence-card">
+                <h4>Additional Spiritual Benefits</h4>
+                <p>In addition, the Cooperators share in the spiritual benefits of the Prelature and, at their death, in the suffrages which Opus Dei offers for its deceased[cite: 3].</p>
+            </div>
+        </div>
+
         <!-- EVENTS SECTION -->
         <div id="events" class="content-section">
             <h3>Events</h3>
@@ -277,9 +321,12 @@
         function handleNavigation() {
             var urlParams = new URLSearchParams(window.location.search);
             var itemParam = urlParams.get('item');
+            var tabParam = urlParams.get('tab');
             var hash = window.location.hash.toLowerCase();
 
-            if (itemParam || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
+            if (tabParam === 'indulgences') {
+                showSection('indulgences');
+            } else if (itemParam || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
 
                 var targetId = '';
