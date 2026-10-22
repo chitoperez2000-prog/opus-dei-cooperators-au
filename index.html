@@ -76,6 +76,7 @@ HTML
         <a onclick="showSection('retreats')">Retreats</a>
         <a onclick="showSection('projects')">Projects</a>
         <a onclick="showSection('indulgences')">Indulgences</a>
+        <a onclick="showSection('letters')">Letters/Articles</a>
         <a onclick="showSection('events')">Events</a>
     </nav>
 
@@ -287,6 +288,27 @@ HTML
             </div>
         </div>
 
+        <!-- LETTERS/ARTICLES SECTION -->
+        <div id="letters" class="content-section">
+            <h3>Letters & Articles</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">Date</th>
+                        <th style="width: 35%;">Title / Link</th>
+                        <th style="width: 50%;">Summary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Oct 16, 2026</td>
+                        <td><a href="https://opusdei.org/en-au/article/letter-from-the-prelate-16-october-2026/" target="_blank" style="color: var(--opus-navy); font-weight: bold; text-decoration: underline;">Letter from the Prelate (16 October 2026) | Contemplation - Opus Dei</a></td>
+                        <td>In this pastoral letter, Monsignor Fernando Ocáriz invites us to reflect more deeply on the call to be contemplatives in the midst of the world, in light of the life of Jesus and the example of St. Josemaría, in preparation for the centenary of the Work.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- EVENTS SECTION -->
         <div id="events" class="content-section">
             <h3>Events</h3>
@@ -325,6 +347,8 @@ HTML
 
             if (tabParam === 'indulgences') {
                 showSection('indulgences');
+            } else if (tabParam === 'letters' || hash === '#letters') {
+                showSection('letters');
             } else if (itemParam || hash.includes('vietnam') || hash.includes('melbourne') || hash === '#news') {
                 showSection('news');
 
